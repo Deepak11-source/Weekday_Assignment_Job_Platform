@@ -1,14 +1,17 @@
 import React, { useEffect, useState } from 'react';
 import SearchBox from '../SearchBox/SearchBox';
-const Api = () => {
+import { useSelector } from 'react-redux';
+import { selectOffset } from '../../store/offsetSlice';
+const API = () => {
     const [responseData, setResponseData] = useState(null);
+    const offset = useSelector(selectOffset);    
 
     const fetchData = async () => {
         const myHeaders = new Headers();
         myHeaders.append("Content-Type", "application/json");
         const body = JSON.stringify({
             "limit": 10,
-            "offset": 0
+            "offset": offset
         });
 
         const requestOptions = {
@@ -32,7 +35,7 @@ const Api = () => {
 
     useEffect(() => {
         fetchData();
-    }, []);
+    }, [offset]);
 
     return (
         <>
@@ -41,4 +44,4 @@ const Api = () => {
     );
 }
 
-export default Api;
+export default API;
