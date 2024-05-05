@@ -1,0 +1,17 @@
+.filterContainer {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 3%;
+}
+
+.selectBox {
+  width: 200px;
+}
+
+.jobCardContainer {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: start;
+  column-gap: 77px;
+  row-gap: 40px;
+}

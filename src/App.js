@@ -4,8 +4,7 @@ import API from './components/API/API'
 
 const App = () => {
   return (
-    <div>
-      <h2>Job Search Platform - Weekday</h2>
+    <div className="App">      
       <API/>
     </div>
   )

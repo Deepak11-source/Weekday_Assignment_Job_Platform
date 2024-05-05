@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from 'react';
-import JobCard from '../JobCard/JobCard';
+import SearchBox from '../SearchBox/SearchBox';
 const Api = () => {
     const [responseData, setResponseData] = useState(null);
-    
+
     const fetchData = async () => {
         const myHeaders = new Headers();
         myHeaders.append("Content-Type", "application/json");
@@ -36,11 +36,9 @@ const Api = () => {
 
     return (
         <>
-            {responseData && responseData.map(job => (
-                <JobCard key={job.jdUid} job={job} />
-            ))}
+            <SearchBox jobData={responseData} />
         </>
     );
 }
 
-export default API;
+export default Api;
